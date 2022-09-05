@@ -43,14 +43,14 @@ You could also use homebrew `brew install miniforge`.
 After you have successfully install Miniforge 3, restart the terminal and move to the next step.
 
 ### 2. Install Tensorflow
-Create a conda environment for Tensorflow.
+Before installing Tensorflow, we need to create a conda environment for it.
 
     conda create -n tensorflow python==3.9
     conda activate tensorflow
 
-Note that `tensorflow` after `conda create -n` is the name for this new environment, feel free to use any name you like. I realized at the end that I put Tensorflow and Transformers under one environment and named it "tensorflow" :sweat_smile:. You could always rename it using `conda rename -n old_name -d new_name`.
+Note that `tensorflow` after `conda create -n` is the name for this new environment, feel free to use any name you like. I realized at the end that I put Tensorflow and Transformers under one environment and named it "tensorflow". You could always rename it using `conda rename -n old_name -d new_name`.
 
-Install tensorflow。
+Now we can install tensorflow.
 
     conda install -c apple tensorflow-deps  
     python -m pip install tensorflow-macos
@@ -75,7 +75,7 @@ Finally, open the jupyter lab to check your Tensorflow version and device. You c
 ![jupyter_notebook](/images/blog/2022-09-05-environment-for-dl/jupyter_notebook.png)
 
 ### 3. Install Transformers
-Before installing Transformers, we need PyTorch and Rust.
+The final piece we need is Transformers. Before that, we should install PyTorch and Rust.
 
     pip install -U --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu
     curl — proto ‘=https’ — tlsv1.2 -sSf https://sh.rustup.rs | sh
