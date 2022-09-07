@@ -1,15 +1,15 @@
 ---
-title: 'Set up environment for deep learning on Mac M1'
+title: 'Set Up Environment for Deep Learning on Mac M1'
 date: 2022-09-05
-permalink: /posts/2022/09/Set-up-environment-for-deep-learning-on-Mac-M1/
+permalink: /posts/2022/09/Set-Up-Environment-for-Deep-Learning-on-Mac-M1/
 tags:
   - machine learning
 ---
 
 This article introduce steps to set up the Python environment for deep learning on Mac M1. We will cover
-- Install Miniforge 3
-- Install Tensorflow
-- Install Transformer
+- [Install Miniforge 3](#install-miniforge-3)
+- [Install Tensorflow](#install-tensorflow)
+- [Install Transformers](#install-transformers)
 
 Before we start, if you have already installed Anaconda or other conda environment, you may want to uninstall them first using `anaconda-clean`.
 
@@ -27,7 +27,7 @@ Finally, we need to remove anaconda path in .bash_profile. `open .bash_profile`
 
 Now we could start the main course.
 
-## 1. Install Miniforge 3
+## Install Miniforge 3
 Download miniforge3 from [here](https://github.com/conda-forge/miniforge/#download). Choose Miniforge3-MacOSX-arm64，and save to Downloads. 
 
 ![miniforge3](/images/blog/2022-09-05-environment-for-dl/miniforge3.png)
@@ -42,7 +42,7 @@ You could also use homebrew `brew install miniforge`.
 
 After you have successfully install Miniforge 3, restart the terminal and move to the next step.
 
-## 2. Install Tensorflow
+## Install Tensorflow
 Before installing Tensorflow, we need to create a conda environment for it.
 
     conda create -n tensorflow python==3.9
@@ -74,7 +74,7 @@ Finally, open the jupyter lab to check your Tensorflow version and device. You c
 
 ![jupyter_notebook](/images/blog/2022-09-05-environment-for-dl/jupyter_notebook.png)
 
-## 3. Install Transformers
+## Install Transformers
 The final piece we need is Transformers. Before that, we should install PyTorch and Rust.
 
     pip install -U --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu
@@ -82,8 +82,9 @@ The final piece we need is Transformers. Before that, we should install PyTorch 
 
 Now you can run `pip install transformers` to get the job done. Enjoy your journey!
 
+<br>
 
-## Reference
+**Reference**
 - [Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/), Uninstalling Anaconda Distribution
 - [Apple developer](https://developer.apple.com/metal/tensorflow-plugin/)
 - [better data science](https://betterdatascience.com/install-tensorflow-2-7-on-macbook-pro-m1-pro/), How To Install TensorFlow 2.7 on MacBook Pro M1 Pro With Ease
