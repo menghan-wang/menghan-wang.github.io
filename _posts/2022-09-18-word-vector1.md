@@ -10,12 +10,12 @@ If you are interested in NLP (natural language processing), you probably have he
 We could find a more formal definition from Wikipedia.
 > In natural language processing (NLP), word embedding is a term used for the representation of words for text analysis, typically in the form of a real-valued vector that encodes the meaning of the word such that the words that are closer in the vector space are expected to be similar in meaning.
 
-So our main question will be how to do it? There are generally two types of method, **count-based vectors and prodiction-based vectors**. 
+So our main question will be how to do it? There are generally two types of method, **count-based vectors and prediction-based vectors**. 
 
 In this first article of "Word Embedding" series, we will cover count-based (or sometimes frequency-based) word vectors and their implementation in Python.
 - [One-hot vectors](#one-hot-vectors)
 - [TF-IDF (term frequency–inverse document frequency)](#tf-idf-term-frequencyinverse-document-frequency)
-- [Co-occurence matrix](#co-occurence-matrix)
+- [Co-occurrence matrix](#co-occurrence-matrix)
 
 Let's start with the most straight-forward one.
 ## One-hot vectors
@@ -24,7 +24,7 @@ On-hot vectors are frequently used to represent categorical or discrete data. In
 From Wikipedia
 >  A one-hot vector is a 1×N matrix (vector) used to distinguish each word in a vocabulary from every other word in the vocabulary. The vector consists of 0s in all cells with the exception of a single 1 in a cell used uniquely to identify the word. 
 
-Let's break it down to simple words with an example. Suppose we have a small dictionary of only 5 words `['the','boy','is','playing','sleep']`. To encode them in one-hot vectors, we will create a 1×5 vector for each word. In each vector, we put 1 at the position of the target word, and 0 at all other positions. 
+Let's break it down into simple words with an example. Suppose we have a small dictionary of only 5 words `['the','boy','is','playing','sleep']`. To encode them in one-hot vectors, we will create a 1×5 vector for each word. In each vector, we put 1 at the position of the target word, and 0 at all other positions. 
 
 ```
   the = [1 0 0 0 0]
@@ -36,18 +36,18 @@ Let's break it down to simple words with an example. Suppose we have a small dic
 
 You could find that the word matrix is simply a N×N identity matrix, where N equals the number of unique words in the dictionary. You could easily generate one by `np.identity(N)`, so we won't spend more time on its code.
 
-Despite its simplicity, there are two main problems with one-hot vector.
+Despite its simplicity, there are two main problems with the one-hot vector.
 - **It generates a sparse matrix with very large dimension**, which could be expensive in terms of storage and computation.
-- **It does not encode similarity**, as all vectors are othogonal. If we compute cosine similarity between two vectors, we will get 0 for all pairs of different words and 1 for all pairs of same words. For instance, you get $similarity(beer,champagne) = similarity(beer,sky) = 0$. It provides no information at all! 
+- **It does not encode similarity**, as all vectors are orthogonal. If we compute cosine similarity between two vectors, we will get 0 for all pairs of different words and 1 for all pairs of same words. For instance, you get $similarity(beer,champagne) = similarity(beer,sky) = 0$. It provides no information at all! 
 
 To address the first one, we could add up the one-hot vectors for every word in a document to get its frequency vector. For instance, the vector for "the boy is playing" will be `[1 1 1 1 0]`, while the vector for "the boy is playing the ball" will be `[2 1 1 1 1]`. We call this type of model "Bag-of-words model". [TF-IDF](#tf-idf-term-frequencyinverse-document-frequency) is another example.
 
-To address the second one, we could make use of the context of a word, namely, the set of words that appear nearby within a fixed-size window. We will introduce this one in [Co-occurance matrix](#co-occurance-matrix).
+To address the second one, we could make use of the context of a word, namely, the set of words that appear nearby within a fixed-size window. We will introduce this one in [Co-occurrence matrix](#co-occurance-matrix).
 
 ## TF-IDF (term frequency–inverse document frequency)
 TF-IDF is compusted as the product of TF and IDF. Again we follow the definition from Wikipedia, for a given term *t* and document *d*
-- **TF (term frequency)**: $\frac{f_{t,d}}{\sum_{t'\in d}f_{t',d}}$, the number of times *t* occurs over the total number of terms (duplicated occurances are counted as well). It measures the relative frequency of *t* in document *d*.
-- **IDF (inverse document frequency)**: $log \frac{\|D\|}{\|d\in D : t\in d\|}$, the logarithmically scaled invese fraction of the documents containing *t*. It measures the commonality of *t* across documents. If the term is less common, IDF will be higher, the term provides more information.
+- **TF (term frequency)**: $\frac{f_{t,d}}{\sum_{t'\in d}f_{t',d}}$, the number of times *t* occurs over the total number of terms (duplicated occurrences are counted as well). It measures the relative frequency of *t* in document *d*.
+- **IDF (inverse document frequency)**: $log \frac{\|D\|}{\|d\in D : t\in d\|}$, the logarithmically scaled inverse fraction of the documents containing *t*. It measures the commonality of *t* across documents. If the term is less common, IDF will be higher, the term provides more information.
 
 Still sounds a bit abstract? Let's move to an example with its Python implementation.
 
@@ -59,7 +59,7 @@ Suppose we have the following corpus.
                 'The girl is crying.']
 ```
 
-One of the simplest way to compute TF-IDF matrix is to use `TfidfVectorizer` from `sklearn`. Let's first try the default option and check what we have.
+One of the simplest ways to compute TF-IDF matrix is to use `TfidfVectorizer` from `sklearn`. Let's first try the default option and check what we have.
 
 ```python
   from sklearn.feature_extraction.text import TfidfVectorizer
@@ -73,9 +73,9 @@ One of the simplest way to compute TF-IDF matrix is to use `TfidfVectorizer` fro
    [0.         0.         0.         0.6088451 0.         0.6088451 0.35959372 0.         0.35959372 0.        ]]
 ```
 
-We get a 3×10 matrix, where 3 is the number of documents, 10 is the number of unique words. Documents are ranked by your input order and words are ranked in alphabetical order. There are several differences between the default option of `TfidfVectorizer` and the above Wiki's definition we introducted.
+We get a 3×10 matrix, where 3 is the number of documents, 10 is the number of unique words. Documents are ranked by your input order and words are ranked in alphabetical order. There are several differences between the default option of `TfidfVectorizer` and the above Wiki's definition we introduced.
 - TF is computed as $f_{t,d}$ without normalization, namely, the absolute frequency or word count of term *t* in document *d*.
-- IDF is compusted as $log \frac{\|D\|+1}{\|d\in D : t\in d\|+1}+1$ to avoid division-by-zero or negative results. Traditionally, we add 1 to the denominator in case *t* is not in the corpus. But this will lead to negatice IDF when some term is contained in all documents. So when `smooth_idf=True` (default), `sklearn` add 1 to both the nominator and denominator. If you set `smooth_idf=False`, IDF will be $log \frac{\|D\|}{\|d\in D : t\in d\|}+1$.
+- IDF is computed as $log \frac{\|D\|+1}{\|d\in D : t\in d\|+1}+1$ to avoid division-by-zero or negative results. Traditionally, we add 1 to the denominator in case *t* is not in the corpus. But this will lead to negative IDF when some term is contained in all documents. So when `smooth_idf=True` (default), `sklearn` add 1 to both the nominator and denominator. If you set `smooth_idf=False`, IDF will be $log \frac{\|D\|}{\|d\in D : t\in d\|}+1$.
 - `norm='l2'` by default. It means L2 norm is applied to TF-IDF matrix such that the sum of squares of vector elements is 1 for each row. You could customize it to L1 norm `norm='l1'` or no normalization `norm=None` (as in Wiki's definition).
 
 To see it more clearly, let's try to build it up by ourselves. We define the following functions.
@@ -146,12 +146,12 @@ If we do not smooth IDF or normalize TF-IDF, we should get the same matrix as `T
 
 If you want to get TF-IDF according to Wiki's definition, you need to add `tf = tf/tf.sum(axis=1)[:,None]` to get relative frequency, and to change IDF as `idf = [np.log(len(corpus)/(sum(w in d for d in corpus)+1)) for w in words]`. Try it yourself!
 
-## Co-occurence matrix
-The main idea of co-occurence matrix is **distributional semantics** that a word's meaning is given by the words that frequently appear close-by. For a given word, it counts how often other words appears in the context window [-w,+w] surrounding the word, where w is the fixed window size. This gives us a N×N matrix, where N is the number of unique words in the corpus. The matrix is symmetric by definition. If word i is in the window of word j, then word j must be in the window of word i as well. So it does not really matter if you read it by row or columns. I personally like to take each row as word vector, namely, the value at (i,j) represents the number of times when word j appears in word i's window.
+## Co-occurrence matrix
+The main idea of co-occurrence matrix is **distributional semantics** that a word's meaning is given by the words that frequently appear close-by. For a given word, it counts how often other words appears in the context window [-w,+w] surrounding the word, where w is the fixed window size. This gives us a N×N matrix, where N is the number of unique words in the corpus. The matrix is symmetric by definition. If word i is in the window of word j, then word j must be in the window of word i as well. So it does not really matter if you read it by row or columns. I personally like to take each row as word vector, namely, the value at (i,j) represents the number of times when word j appears in word i's window.
 
 However, this N×N matrix suffers the same problem of sparsity as one-hot vector. Usually, dimensionality reduction is the next step, where SDC (Singular Value Decomposition) or PCA (Principal Components Analysis) are commonly used to decompose the matrix and to obtain key components.
 
-In the rest of this section, we will compute co-occurence matrix together. Let's start with the same raw corpus in TF-IDF and use a fixed window size of 1.
+In the rest of this section, we will compute co-occurrence matrix together. Let's start with the same raw corpus in TF-IDF and use a fixed window size of 1.
 ```python
   raw_corpus = ['The dog is chasing the ball.',
                 'The boy is playing with the ball.',
@@ -174,8 +174,8 @@ Before diving into the code, we could check some words manually.
 - For `'the'`: `'<START>'` occurs three times, `'ball'` occurs twice, `'boy', 'chasing', 'dog', 'girl', 'with'` each occurs once. Its word vector should be `[0 3 2 1 1 0 1 1 0 0 0 1]`.
 
 Now it's time to teach your computer to do this. We define a new function here.
-- `compute_co_occurrence_matrix`: input `corpus` (list of list of strings) and `window_size` (positive integer), return co-occurance matrix `M` (numpy matrix, N×N) and word-index dictionary `word2ind` (dict). We usually use the alphabetical order for `word2ind`, this dictionary helps you look up word vector in co-occurence matrix easier.
-- `reduce_to_k_dim`: input co-occurance matrix `M` (numpy matrix, N×N) and desired dimension `k` (positive integer), return matrix of k-dimensioal word embeddings `M_reduced` (numpy matrix, N×k). We just borrow `TruncatedSVD` from `sklearn`, learn more about it [here](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html).
+- `compute_co_occurrence_matrix`: input `corpus` (list of list of strings) and `window_size` (positive integer), return co-occurance matrix `M` (numpy matrix, N×N) and word-index dictionary `word2ind` (dict). We usually use the alphabetical order for `word2ind`, this dictionary helps you look up word vector in co-occurrence matrix easier.
+- `reduce_to_k_dim`: input co-occurrence matrix `M` (numpy matrix, N×N) and desired dimension `k` (positive integer), return matrix of k-dimensioal word embeddings `M_reduced` (numpy matrix, N×k). We just borrow `TruncatedSVD` from `sklearn`, learn more about it [here](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html).
 
 ```python
   from sklearn.decomposition import TruncatedSVD
@@ -236,7 +236,7 @@ Let's check its outcomes with our manual calculation.
    [ 2.94393564  2.9549918 ]
    [ 0.73098262 -0.64702567]]
 ```
-These word vectors are no longer othogonal to each other. You could measure their similarity by cosine similarity. 
+These word vectors are no longer orthogonal to each other. You could measure their similarity by cosine similarity. 
 ```python 
   def cos_sim(M, word2ind, word_i, word_j):
       a =  M_reduced[word2ind[word_i]]
