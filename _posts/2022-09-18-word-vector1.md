@@ -40,7 +40,7 @@ Despite its simplicity, there are two main problems with the one-hot vector.
 - **It generates a sparse matrix with very large dimension**, which could be expensive in terms of storage and computation.
 - **It does not encode similarity**, as all vectors are orthogonal. If we compute cosine similarity between two vectors, we will get 0 for all pairs of different words and 1 for all pairs of same words. For instance, you get $similarity(beer,champagne) = similarity(beer,sky) = 0$. It provides no information at all! 
 
-To address the first one, we could add up the one-hot vectors for every word in a document to get its frequency vector. For instance, the vector for "the boy is playing" will be `[1 1 1 1 0]`, while the vector for "the boy is playing the ball" will be `[2 1 1 1 1]`. We call this type of model "Bag-of-words model". [TF-IDF](#tf-idf-term-frequencyinverse-document-frequency) is another example.
+To address the first one, we could add up the one-hot vectors for every word in a document to get its frequency vector. For instance, the vector for "the boy is playing" will be `[1 1 1 1 0]`, while the vector for "the boy is playing the ball" will be `[2 1 1 1 1]`. If we have multiple documents and stack their vectors, we can get a document-term matrix. [TF-IDF](#tf-idf-term-frequencyinverse-document-frequency) is a popular way to weight different terms.
 
 To address the second one, we could make use of the context of a word, namely, the set of words that appear nearby within a fixed-size window. We will introduce this one in [Co-occurrence matrix](#co-occurance-matrix).
 
