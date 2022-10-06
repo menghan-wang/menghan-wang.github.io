@@ -3,7 +3,7 @@ title: 'Set Up Environment for Deep Learning on Mac M1'
 date: 2022-09-05
 permalink: /posts/2022/09/Set-Up-Environment-for-Deep-Learning-on-Mac-M1/
 tags:
-  - machine learning
+  - ML
 ---
 
 This article introduce steps to set up the Python environment for deep learning on Mac M1. We will cover

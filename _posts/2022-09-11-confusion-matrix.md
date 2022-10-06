@@ -3,7 +3,7 @@ title: 'Evaluate Performance of Classification Models and its Visualization in P
 date: 2022-09-11
 permalink: /posts/2022/09/Evaluate-Performance-of-Classification-Models-and-its-Visualization-in-Python/
 tags:
-  - machine learning
+  - ML
 ---
 
 If you are developing models to deal with classification problem, you probably have heard metrics like accuracy, precision, recall, F1-score for performance evaluation. You could easily get their meanings through a quick search on Google, but you may ends up with lines of formulas, while wondering why we need various metrics. In this article, I will try to explain the rationale behind those metrics, and to share the Python code of their computation and visualization. 
