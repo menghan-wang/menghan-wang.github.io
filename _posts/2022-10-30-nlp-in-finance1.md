@@ -13,7 +13,9 @@ In this series of posts, I would like to summary the current application of NLP 
 - [Readability](/posts/2022/11/nlp-in-finance3/)
 - BERT
 
-In this post, we will talk about the term frequency measures. The survey paper by [Bae et al.](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3639267) summarizes the text measures related to term frequency. In the discussion below, I borrowed a lot from their paper.
+Before we dive in, I found two survey papers [Loughran, Tim, and Bill Mcdonald (2016)](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123) and [Bae et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3639267) very helpful for those interested in this strand of literature. I've learned and borrowed a lot from them.
+
+In this post, I will share with you the term frequency measures.
 
 ## Term Frequency Measure
 Term-frequency measures are usually used to measure people's attention to some specific topics. The common way to compute this type of measures is to divide the word count related to a given topic of interest by the overall length of the document (or transcript). Counting word frequency is straight-forward, while the main issue is usually to construct a word dictionary (library) of interest. For some specific topics like Brexit or Covid-19, it is easy to construct a list of few keywords without too much controversy. But for more wide-ranging topics like political or macroeconomic risk (see papers below), it is almost impossible to do this manually. The most widely-used techniques to address this problem is the pattern-based sequence classification.
@@ -73,4 +75,5 @@ That's all I have for this post. If you are also interested in applying NLP tech
 - [Flynn, Joel P., and Karthik A. Sastry](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3592107), Attention Cycles. Working paper.
 - [Hassan, Tarek A, Laurence van Lent, Stephan Hollander, and Ahmed Tahoun](https://academic.oup.com/qje/article/134/4/2135/5531768), 2019, Firm-Level Political Risk: Measurement and Effects. The Quarterly Journal of Economics 134, 2135–2202.
 - [Li, Qing, Hongyu Shan, Yuehua Tang, and Vincent Yao](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3508497), 2020, Corporate Climate Risk: Measurements and Responses. Working paper.
+- [Loughran, Tim, and Bill Mcdonald](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123), 2016, Textual Analysis in Accounting and Finance: A Survey. Journal of Accounting Research 54, 1187–1230.
 - [Sautner, Zacharias, Laurence van Lent, Grigory Vilkov, and Ruishen Zhang](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3642508), 2020, Firm-level Climate Change Exposure. Journal of Finance, forthcoming.
