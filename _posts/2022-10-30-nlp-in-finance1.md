@@ -11,7 +11,7 @@ In this series of posts, I would like to summary the current application of NLP 
 - [Text similarity](/posts/2022/11/nlp-in-finance2/)
 - [Sentiment](/posts/2022/11/nlp-in-finance3/)
 - [Readability](/posts/2022/11/nlp-in-finance3/)
-- BERT
+- [BERT](/posts/2022/11/nlp-in-finance4/)
 
 Before we dive in, I found two survey papers [Loughran, Tim, and Bill Mcdonald (2016)](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123) and [Bae et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3639267) very helpful for those interested in this strand of literature. I've learned and borrowed a lot from them.
 
@@ -42,7 +42,6 @@ These approaches also limit the number of subjective choices to the initial choi
 - **Illustrative case studies**: take the example of a single firm to plot its score over time and to explain peaks and troughs in the pattern by significant events.
 
 ## Related Literature
-
 Below are some examples of how term frequency measures are constructed in the field of finance and accounting. Since the measurement issue is our main interest here, I will skip other parts of those papers (e.g. economic implications), which doesn't mean they are not important or interesting. You are encouraged to check them out by yourself!
 
 - [Hassan et al., 2019](https://academic.oup.com/qje/article/134/4/2135/5531768): it measures the **political risk** faced by a given firm-year as the share of their quarterly earnings conference calls that centers on risks associated with politics in general and with specific political topics. To construct a training library of political texts (bigrams), they use an undergraduate textbook on U.S. politics and articles from the political section of U.S. newspapers. Then for a given firm-year observation, the political risk is computed as the number of political bigrams surrounded by a synonym for “risk” or “uncertainty” (within 10 words on either side), divided by the total number of bigrams in the transcript. Each bigram is weighted by its frequency in the political library.
