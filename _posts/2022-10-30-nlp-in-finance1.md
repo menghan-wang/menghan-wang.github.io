@@ -6,16 +6,13 @@ tags:
   - NLP
 ---
 
-In this series of posts, I would like to summary the current application of NLP in finance and accounting research, with a focus on how different text-based measurements are constructed. I will cover
-- [Term Frequency](/posts/2022/10/nlp-in-finance1/)
-- [Text similarity](/posts/2022/11/nlp-in-finance2/)
-- [Sentiment](/posts/2022/11/nlp-in-finance3/)
-- [Readability](/posts/2022/11/nlp-in-finance3/)
-- [BERT](/posts/2022/11/nlp-in-finance4/)
+In this series of posts, I would like to summary the current application of NLP in finance and accounting research, with a focus on how different text-based measurements are constructed. I plan to cover [Term Frequency](/posts/2022/10/nlp-in-finance1/), [Text similarity](/posts/2022/11/nlp-in-finance2/), [Sentiment](/posts/2022/11/nlp-in-finance3/), [Readability](/posts/2022/11/nlp-in-finance4/), [BERT](/posts/2022/11/nlp-in-finance5/).
 
 Before we dive in, I found two survey papers [Loughran, Tim, and Bill Mcdonald (2016)](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123) and [Bae et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3639267) very helpful for those interested in this strand of literature. I've learned and borrowed a lot from them.
 
 In this post, I will share with you the term frequency measures.
+- [Term Frequency Measure](#term-frequency-measure)
+- [Related Literature](#related-literature)
 
 ## Term Frequency Measure
 Term-frequency measures are usually used to measure people's attention to some specific topics. The common way to compute this type of measures is to divide the word count related to a given topic of interest by the overall length of the document (or transcript). Counting word frequency is straight-forward, while the main issue is usually to construct a word dictionary (library) of interest. For some specific topics like Brexit or Covid-19, it is easy to construct a list of few keywords without too much controversy. But for more wide-ranging topics like political or macroeconomic risk (see papers below), it is almost impossible to do this manually. The most widely-used techniques to address this problem is the pattern-based sequence classification.
