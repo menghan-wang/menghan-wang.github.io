@@ -6,7 +6,7 @@ tags:
   - NLP
 ---
 
-In this series of posts, I would like to summary the current application of NLP in finance and accounting research, with a focus on how different text-based measurements are constructed. I plan to cover [Term Frequency](/posts/2022/10/nlp-in-finance1/), [Text similarity](/posts/2022/11/nlp-in-finance2/), [Sentiment](/posts/2022/11/nlp-in-finance3/), [Readability](/posts/2022/11/nlp-in-finance4/), [BERT](/posts/2022/11/nlp-in-finance5/).
+In this series of posts, I would like to summarize the current application of NLP in finance and accounting research, with a focus on how different text-based measurements are constructed. I plan to cover [Term Frequency](/posts/2022/10/nlp-in-finance1/), [Text similarity](/posts/2022/11/nlp-in-finance2/), [Sentiment](/posts/2022/11/nlp-in-finance3/), [Readability](/posts/2022/11/nlp-in-finance4/), [BERT](/posts/2022/11/nlp-in-finance5/).
 
 Before we dive in, I found two survey papers [Loughran, Tim, and Bill Mcdonald (2016)](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123) and [Bae et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3639267) very helpful for those interested in this strand of literature. I've learned and borrowed a lot from them.
 
