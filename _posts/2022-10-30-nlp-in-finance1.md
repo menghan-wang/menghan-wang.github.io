@@ -35,7 +35,7 @@ The pattern-based sequence classification has the advantage that the only subjec
 These approaches also limit the number of subjective choices to the initial choice of seed words. Despite of this, to empirically prove its validity and robustness, more tests are needed.
 - **Face validity**: show relevant word combinations (unigrams, bigrams) and the text fragments where they occur; distribution of scores across time and across industries; heterogeneity among entities after taking out time and industry fixed effect.
 - **Audit study based on human reading**: hire auditors to verify results using a set of established guidelines. It usually requires great investment to carefully train those auditors and cross-check their results, but helps ensure the accuracy of the measures. 
-- **Convergent validity**: it tests the degree of correlation between two measures that theoretically should be associated (e.g. the newly-constructed measures and the ).
+- **Convergent validity**: it tests the degree of correlation between two measures that theoretically should be associated (e.g. the newly-constructed measures and the existing measures).
 - **Illustrative case studies**: take the example of a single firm to plot its score over time and to explain peaks and troughs in the pattern by significant events.
 
 ## Related Literature
