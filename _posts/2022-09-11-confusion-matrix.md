@@ -16,8 +16,8 @@ If you are only interested in a particular part, feel free to use the navigation
 
 ## When we need to evaluate model performance
 Scenario 1: Suppose you have developed two models to predict the sex of baby, and want to evaluate their performance using a testing sample of 5000 boys and 5000 girls. Model performances are as follow.
-- Model A: correctly predicts 4990 boys and 4990 girls, while misclassifies 10 boys ad girls and 10 girls as boys.
-- Model B: correctly predicts 4995 boys and 4995 girls, while misclassifies 5 boys ad girls and 5 girls as boys.
+- Model A: correctly predicts 4990 boys and 4990 girls, while misclassifies 10 boys as girls and 10 girls as boys.
+- Model B: correctly predicts 4995 boys and 4995 girls, while misclassifies 5 boys as girls and 5 girls as boys.
 
 What would you say about the model performance? Probably model B outperforms model A, since B gets 9990 out of 10000 correct, while A only gets 9980 out of 10000 correct. Here you are actually using "accuracy" metrics, which we will explain in details later.
 
@@ -45,7 +45,7 @@ With these concepts in mind, we can define accuracy, precision, recall and F-sco
 - $Precision = \frac{TP}{TP+FP}$, it answers what proportion of positive predictions was actually correct
 - $Recall = \frac{TP}{TP+FN}$, it answers what proportion of actual positive was correctly predicted
 
-To make this more concrete, let's calculte them for model C and D, assuming noncancerous cells as positive group, cancer cells as negative group. 
+To make this more concrete, let's calculate them for model C and D, assuming noncancerous cells as positive group, cancer cells as negative group. 
 
 ![performance-table](/images/blog/2022-09-11-confusion-matrix/performance-table.png)
 
@@ -57,9 +57,9 @@ Presision and recall are often negatively correlated (precision-recall tradeoff)
 When $\beta = 1$, which weights precision and recall equally, the corresponding F-score is called F1-score.
 - $F1-score = \frac{2\times Precision \times Recall}{Precision+Recall}$
 
-Suppose in scenario 2, you update model C and get a new set of results of TP=8, TN=9980, FP=10, FN=2. Then precision for the updated model is $\frac{8}{8+10}=0.444$, while the recall is $\frac{8}{8+2}=0.8$. Since the camparisons of precision and recall lead to different conclusion, we need to calculate F-score. If we weight precision and recall equally, the F1-score turns out to be 0.500 for the original model and 0.571 for the updated model, which favors the updated model. 
+Suppose in scenario 2, you update model C and get a new set of results of TP=8, TN=9980, FP=10, FN=2. Then precision for the updated model is $\frac{8}{8+10}=0.444$, while the recall is $\frac{8}{8+2}=0.8$. Since the comparisons of precision and recall lead to different conclusions, we need to calculate the F-score. If we weight precision and recall equally, the F1-score turns out to be 0.500 for the original model and 0.571 for the updated model, which favors the updated model. 
 
-You could argue that recall is a more important metrics in assisted diagnostic model, as doctors may not be able to check thousands of cells by themselves in a time-efficient manner, but could easily fliter out those false positive cells from predicted positive sample through more inspection. To emphasize the recall metric, you could set $\beta$ to be greater than 1. Let's try $\beta=2$ here and compute F-score again. It will be 0.714 and 0.689 for the original and updated model respectively, which favors the original model.
+You could argue that recall is a more important metric in assisted diagnostic model, as doctors may not be able to check thousands of cells by themselves in a time-efficient manner, but could easily fliter out those false positive cells from predicted positive sample through more inspection. To emphasize the recall metric, you could set $\beta$ to be greater than 1. Let's try $\beta=2$ here and compute F-score again. It will be 0.714 and 0.689 for the original and updated model respectively, which favors the original model.
 
 Now you should have a clearer mind about those terms and formulas, let's move on to calculate and visualize them in Python.
 
@@ -128,7 +128,7 @@ This approach looks a bit verbose, but the upside is the flexibility for customi
 
 If you are looking for something more concise, you could also use `ConfusionMatrixDisplay` from `scikit-learn`. Check out a more detailed explanation [here](https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py).
 
-That's all about the binary classification. If you still remember the question we left for multi-class classification, let's check out one more example as promised. Suppose we have 3 types of flowers denoted as `[0,1,2]`, and a sample of 300 flowers equally distributed among 3 types. Our model predicts 90 type 0 and type 1 flowers correctly, while misclassifies 10 type 0 as type 1, 10 type 1 as type 2.
+That's all about the binary classification. If you still remember the question we left for multi-class classification, let's check out one more example as promised. Suppose we have 3 types of flowers denoted as `[0,1,2]`, and a sample of 300 flowers equally distributed among 3 types. Our model predicts 90 type 0 and type 1 flowers correctly, while misclassifying 10 type 0 as type 1, 10 type 1 as type 2.
 
 We can use the same functions `confusion_matrix` and `classification_report` as before.
 
@@ -151,7 +151,7 @@ We can use the same functions `confusion_matrix` and `classification_report` as 
      weighted avg     0.9364    0.9333    0.9332       300
 
 
-You could find that confusion matrix is now $3\times 3$. In general, it will be a $n\times n$ matrix, where $n$ equals the number of class. We still have predicted type on x-axis and actual type on y-axis. The sum of each columns refers to total number of elements predicted as that class, while the sum of each row refers to total number of elements actually in that class. Values on the diagnal represents the number of correct predictions. 
+You could find that confusion matrix is now $3\times 3$. In general, it will be a $n\times n$ matrix, where $n$ equals the number of classes. We still have predicted type on x-axis and actual type on y-axis. The sum of each column refers to total number of elements predicted as that class, while the sum of each row refers to total number of elements actually in that class. Values on the diagonal represent the number of correct predictions. 
 
 We calculate precision and recall for each class. 
 - Precision is measured as correct predictions over total predictions of that class, which is the sum of that column. For group 0, it will be $\frac{90}{90+0+0}=1$. 
@@ -161,7 +161,7 @@ The heatmap plot is also similar. Following our function `cf_matrix_plot`, we ju
 
 ![heatmap-multi-class](/images/blog/2022-09-11-confusion-matrix/heatmap-multi-class.png)
 
-Now you should know how to evaluate performance of classification model using Python. Try to apply them to your own project!
+Now you should know how to evaluate the performance of a classification model using Python. Try to apply them to your own project!
 <br>
 
 **Reference**
