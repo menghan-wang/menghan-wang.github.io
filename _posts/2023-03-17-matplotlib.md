@@ -55,8 +55,6 @@ plt.plot(x, y2, '--', color='cornflowerblue')
     <img width="60%" src="/images/blog/2023-03-17-matplotlib/linecolor.jpg">
 </p>
 
-`color` specifies the line color, `markerfacecolor` specifies the marker color.
-
 ## 3. Add and customize legend 
 Since there are multiple data series in our plot, usually, we need a legend to specify them. Two adjustments are needed, first add `label='series name'` in `plt.plot()`, then add `plt.legend()`, you will get below.
 <p align="center" width="100%">
