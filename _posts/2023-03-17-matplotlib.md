@@ -61,7 +61,7 @@ Since there are multiple data series in our plot, usually, we need a legend to s
     <img width="60%" src="/images/blog/2023-03-17-matplotlib/default_legend.jpg">
 </p>
 
-To adjust the legend in your plot, below are some commonly used parameters. More details can be find [here](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html).
+To adjust the legend in your plot, below are some commonly used parameters. More details can be found [here](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html).
 - loc: it specifies the location of the legend relative to the axes. Two ways of inputs are as follow.
   - string: 'upper left', 'upper right', 'lower left', 'lower right' place the legend at the corresponding corner of the axes;  'upper center', 'lower center', 'center left', 'center right' place the legend at the center of the corresponding edge of the axes; 'center' places the legend at the center of the axes; 'best' places the legend at the location, among the nine locations defined so far, with the minimum overlap with other drawn artists. The default option is 'best'.
   - 2-tuple: the coordinates of the lower-left corner of the legend in axes coordinates (in which case bbox_to_anchor will be ignored).
@@ -153,7 +153,7 @@ Last but not the least, you can adjust the size and aspect ratio of the plot wit
 
 <br>
 
-In this post, I only cover single plot in Matplotlib. If you want several subplots in a figure, you can use`plt.subplots()`, or first create a figure using `fig = plt.figure()` then subplots using `plt.subplot()`. The syntax and functions are very similar.
+In this post, I only cover single plot in Matplotlib. If you want several subplots in a figure, you can use `plt.subplots()`, or first create a figure using `fig = plt.figure()` then subplots using `plt.subplot()`. The syntax and functions are very similar.
 
 This is all I have for this post. Enjoy your reading, and hope it helps!
 
