@@ -15,3 +15,5 @@ I graduated from [Xi'an Jiaotong University](http://en.xjtu.edu.cn/) in 2020 wit
 <!-- where I was admitted to the [Special Class for the Gifted Young](https://en.wikipedia.org/wiki/Special_Class_for_the_Gifted_Young) at the age of 14. -->
 
 <!-- I will share my research with you on this website! -->
+
+Reach out to me: menghanw [at] connect [dot] hku [dot] hk
