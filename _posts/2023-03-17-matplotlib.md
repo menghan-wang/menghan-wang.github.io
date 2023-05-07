@@ -1,5 +1,5 @@
 ---
-title: 'How to customize my plot with Matplotlib?'
+title: 'How to Customize My Plot with Matplotlib?'
 date: 2023-03-17
 permalink: /posts/2023/03/matplotlib/
 tags:
