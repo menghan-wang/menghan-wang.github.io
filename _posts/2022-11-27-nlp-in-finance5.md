@@ -1,5 +1,5 @@
 ---
-title: 'NLP in Finance and Accounting (V): BERT (Bidirectional Encoder Representations from Transformers)'
+title: 'NLP in Finance and Accounting (V): BERT'
 date: 2022-11-27
 permalink: /posts/2022/11/nlp-in-finance5/
 tags:
