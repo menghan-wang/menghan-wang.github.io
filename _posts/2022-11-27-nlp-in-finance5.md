@@ -6,7 +6,7 @@ tags:
   - NLP
 ---
 
-This is the last post of the series on NLP in finance and accounting. In this post, we will talk about measures based on BERT model. 
+This is the fifth post of the series on NLP in finance and accounting. In this post, we will talk about measures based on BERT model. 
 - [BERT Measure](#bert-measure)
 - [Related Literature](#related-literature)
 
@@ -14,8 +14,8 @@ If you are also interested in applying NLP techniques to finance research, feel 
 - [Term Frequency](/posts/2022/10/nlp-in-finance1/)
 - [Text similarity](/posts/2022/11/nlp-in-finance2/)
 - [Sentiment](/posts/2022/11/nlp-in-finance3/)
-- [Readability](/posts/2022/11/nlp-in-finance3/)
-- [BERT](/posts/2022/11/nlp-in-finance4/)
+- [Readability](/posts/2022/11/nlp-in-finance4/)
+- [BERT](/posts/2022/11/nlp-in-finance5/)
 
 ## BERT Measure
 BERT (Bidirectional Encoder Representations from Transformers) is a transformer-based machine learning technique developed by researchers at Google. Compared to those count-based or dictionary-based measures we introduced previously, BERT model considers the context of each occurrence for a given word, and substantially outperforms those context-free models, like word2vec or GloVe, in language translation, named entity recognition, and sentiment classification of general text ([Devlin et al., 2018](https://arxiv.org/pdf/1810.04805v2.pdf)). However, it suffers from the criticism of costly training process and low interpretability due to its complex model structure and large amount of parameters.
