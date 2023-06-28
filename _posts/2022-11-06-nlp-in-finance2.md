@@ -52,8 +52,8 @@ That's all I have for this post. If you are also interested in applying NLP tech
 - [Term Frequency](/posts/2022/10/nlp-in-finance1/)
 - [Text similarity](/posts/2022/11/nlp-in-finance2/)
 - [Sentiment](/posts/2022/11/nlp-in-finance3/)
-- [Readability](/posts/2022/11/nlp-in-finance3/)
-- [BERT](/posts/2022/11/nlp-in-finance4/)
+- [Readability](/posts/2022/11/nlp-in-finance4/)
+- [BERT](/posts/2022/11/nlp-in-finance5/)
 
 Stay tuned to this series, see you next time!
 
