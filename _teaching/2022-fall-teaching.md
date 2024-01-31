@@ -9,6 +9,6 @@ location: "Hong Kong"
 ---
 
 TA for [Dr. Yan XU](https://www.hkubs.hku.hk/people/yan-xu/)
-- Lectured on mid-term exams
+<!-- - Lectured on mid-term exams
 - Graded assignments, mid-term and final exams
-- Invigilation and other administrative support
+- Invigilation and other administrative support -->

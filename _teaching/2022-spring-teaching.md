@@ -9,6 +9,6 @@ location: "Hong Kong"
 ---
 
 TA for [Prof. Xuewen Liu](https://www.hkubs.hku.hk/people/xuewen-liu/)
-- Graded assignments and final exams
+<!-- - Graded assignments and final exams
 - Office hour for Q&A by appointment
-- Invigilation and other administrative support
+- Invigilation and other administrative support -->
