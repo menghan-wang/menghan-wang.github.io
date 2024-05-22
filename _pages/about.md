@@ -8,6 +8,7 @@ redirect_from:
   - /about.html
 ---
 
+<br>
 
 I am a fourth-year PhD candidate in Finance at [the University of Hong Kong](https://www.hku.hk/). My research interests span sustainability, human capital, and innovation.
 
