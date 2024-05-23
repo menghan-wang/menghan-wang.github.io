@@ -61,7 +61,15 @@ Below are some examples of how term frequency measures are constructed in the fi
 
 <br>
 
-That's all I have for this post. If you are also interested in applying NLP techniques to finance research, stay tuned to this series, see you next time!
+That's all I have for this post. If you are also interested in applying NLP techniques to finance research, feel free to check out other pieces.
+- [Term Frequency](/posts/2022/10/nlp-in-finance1/)
+- [Text similarity](/posts/2022/11/nlp-in-finance2/)
+- [Sentiment](/posts/2022/11/nlp-in-finance3/)
+- [Readability](/posts/2022/11/nlp-in-finance4/)
+- [BERT](/posts/2022/11/nlp-in-finance5/)
+- [Generative LLM](/posts/2024/04/nlp-in-finance6/)
+
+Stay tuned to this series, see you next time!
 
 <br>
 

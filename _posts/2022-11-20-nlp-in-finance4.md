@@ -51,6 +51,7 @@ That's all I have for this post. If you are also interested in applying NLP tech
 - [Sentiment](/posts/2022/11/nlp-in-finance3/)
 - [Readability](/posts/2022/11/nlp-in-finance4/)
 - [BERT](/posts/2022/11/nlp-in-finance5/)
+- [Generative LLM](/posts/2024/04/nlp-in-finance6/)
 
 Stay tuned to this series, see you next time!
 
