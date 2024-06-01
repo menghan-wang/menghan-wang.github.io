@@ -9,6 +9,12 @@ redirect_from:
 
 <br style="line-height: 0.5;">
 
+**PMBA6112: Renewable Energy Finance**
+
+TA for [Prof. Thomas Schmid](https://www.hkubs.hku.hk/people/thomas-schmid/)
+
+*MBA course, 2024 Spring*
+
 **FINA6054: Selected Topics in Financial Research**
 
 TA for [Prof. Roni Michaely](https://www.hkubs.hku.hk/people/roni-michaely/)
