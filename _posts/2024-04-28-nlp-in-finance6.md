@@ -79,7 +79,7 @@ When using generative LLMs in practice, several key considerations emerge.
      - Using BART ([Bai et al., 2023](https://ssrn.com/abstract_id=4480056))
 4. Consistency and replicability
    - Make the generations as deterministic as possible: set `temperature=0` or `top_n=0`
-   - Re-run the analysis for multiple times (at least for a small sample) to see how much the responses vary ([Eisfeldt et al., 2023](https://www.nber.org/papers/w31222), [Kim et al. (2023a)](https://doi.org/10.2139/ssrn.4425527))
+   - Re-run the analysis for multiple times (at least for a small sample) to see how much the responses vary ([Eisfeldt et al., 2023](https://www.nber.org/papers/w31222), [Kim et al., 2023a](https://doi.org/10.2139/ssrn.4425527))
    - Be transparent in your model, parameters, prompt design, and always backup the raw prompts and completions
 
 <br>
@@ -103,6 +103,6 @@ Thanks for reading, and see you next time!
 - [Chen, Yifei, Bryan T. Kelly, and Dacheng Xiu](https://papers.ssrn.com/abstract=4416687), 2022, Expected Returns and Large Language Models, Working paper.
 - [Eisfeldt, Andrea L, Gregor Schubert, and Miao Ben Zhang](https://www.nber.org/papers/w31222), 2023, Generative AI and Firm Values, Working paper.
 - [Jha, Manish, Jialin Qian, Michael Weber, and Baozhong Yang](http://ssrn.com/abstract=4521096), 2023, ChatGPT and Corporate Policies, Working paper.
-- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://doi.org/10.2139/ssrn.4425527), 2023, Bloated Disclosures: Can ChatGPT Help Investors Process Information?, Working paper.
-- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4593660), “From Transcripts to Insights: Uncovering Corporate Risks Using Generative AI.” SSRN Electronic Journal, 2023. https://doi.org/10.2139/ssrn.4593660.
+- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://doi.org/10.2139/ssrn.4425527), 2023a, Bloated Disclosures: Can ChatGPT Help Investors Process Information?, Working paper.
+- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4593660), 2023b, From Transcripts to Insights: Uncovering Corporate Risks Using Generative AI, Working paper. 
 
