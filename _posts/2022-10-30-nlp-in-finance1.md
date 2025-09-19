@@ -6,16 +6,16 @@ tags:
   - NLP
 ---
 
-In this series of posts, I would like to summarize the current application of NLP in finance and accounting research, with a focus on how different text-based measurements are constructed. I plan to cover [Term Frequency](/posts/2022/10/nlp-in-finance1/), [Text similarity](/posts/2022/11/nlp-in-finance2/), [Sentiment](/posts/2022/11/nlp-in-finance3/), [Readability](/posts/2022/11/nlp-in-finance4/), [BERT](/posts/2022/11/nlp-in-finance5/).
+In this series of posts, I would like to summarize the current applications of NLP in finance and accounting research, with a focus on how different text-based measurements are constructed. I plan to cover [Term Frequency](/posts/2022/10/nlp-in-finance1/), [Text similarity](/posts/2022/11/nlp-in-finance2/), [Sentiment](/posts/2022/11/nlp-in-finance3/), [Readability](/posts/2022/11/nlp-in-finance4/), [BERT](/posts/2022/11/nlp-in-finance5/).
 
-Before we dive in, I found two survey papers [Loughran, Tim, and Bill Mcdonald (2016)](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123) and [Bae et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3639267) very helpful for those interested in this strand of literature. I've learned and borrowed a lot from them.
+Before we dive in, I found two survey papers [Loughran, Tim, and Bill Mcdonald (2016)](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123) and [Bae et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4162594) very helpful for those interested in this strand of literature. I've learned and borrowed a lot from them.
 
 In this post, I will share with you the term frequency measures.
 - [Term Frequency Measure](#term-frequency-measure)
 - [Related Literature](#related-literature)
 
 ## Term Frequency Measure
-Term-frequency measures are usually used to measure people's attention to some specific topics. The common way to compute this type of measures is to divide the word count related to a given topic of interest by the overall length of the document (or transcript). Counting word frequency is straight-forward, while the main issue is usually to construct a word dictionary (library) of interest. For some specific topics like Brexit or Covid-19, it is easy to construct a list of few keywords without too much controversy. But for more wide-ranging topics like political or macroeconomic risk (see papers below), it is almost impossible to do this manually. The most widely-used techniques to address this problem is the pattern-based sequence classification.
+Term-frequency measures are usually used to measure people's attention to some specific topics. The common way to compute this type of measures is to divide the word count related to a given topic of interest, by the overall length of the document (or transcript). Counting word frequency is straight-forward, while the main issue is usually to construct a word dictionary (library) of interest. For some specific topics like Brexit or Covid-19, it is easy to construct a list of few keywords without too much controversy. But for more wide-ranging topics like political or macroeconomic risk (see papers below), it is almost impossible to do this manually. The most widely-used techniques to address this problem is the pattern-based sequence classification.
 
 The pattern-based sequence classification involves two steps:
 - **Training**: compute the classification strength of a given pattern to each class.
@@ -28,11 +28,11 @@ The pattern-based sequence classification involves two steps:
 
 When this technique is applied in finance and accounting, instead of constructing a categorical variable, we often stop at the training step when we select the top N patterns with highest TF-IDF values as our dictionary. Then the topic score of our interest for a given document can be computed as the occurrences of patterns in the dictionary scaled by the total number of patterns in the document. Textbooks and newspaper articles are often chosen as the training set. As for the choice of pattern length, there appears to be large improvements to using bigrams over unigrams in many applications, but even longer patterns appear to work less well.
 
-The pattern-based sequence classification has the advantage that the only subjective choice needed is to choose the training set. This choice is traceable and can be subjected to robustness checks. However, there may not be no appropriate labelled training set, or the vocabulary used in training set could differ from the testing set (e.g. textbooks vs managerial disclosure). Two alternatives can be considered.
+The pattern-based sequence classification has the advantage that the only subjective choice needed is to choose the training set. This choice is traceable and can be subjected to robustness checks. However, an appropriately labelled training set may not be available, or the vocabulary used in training set could differ from the testing set (e.g. textbooks vs managerial disclosure). Two alternatives can be considered.
 - **Computer-assisted keyword discovery**: it starts with some seed words that unambiguously related to the topics of interest, then the keyword discovery algorithm identifies the remainder of the word list by the co-occurrence with seed words. 
 - **Word embedding**: it starts with a set of seed words as well, then uses word embedding to find words that have similar meaning to those seed words. More details related to word embedding can be found in my other posts on [Word2Vec](/posts/2022/09/Word-vector2/) and [GloVe](/posts/2022/10/Word-vector3/).
 
-These approaches also limit the number of subjective choices to the initial choice of seed words. Despite of this, to empirically prove its validity and robustness, more tests are needed.
+These approaches also limit the number of subjective choices to the initial choice of seed words. Despite this, to empirically prove its validity and robustness, more tests are needed.
 - **Face validity**: show relevant word combinations (unigrams, bigrams) and the text fragments where they occur; distribution of scores across time and across industries; heterogeneity among entities after taking out time and industry fixed effect.
 - **Audit study based on human reading**: hire auditors to verify results using a set of established guidelines. It usually requires great investment to carefully train those auditors and cross-check their results, but helps ensure the accuracy of the measures. 
 - **Convergent validity**: it tests the degree of correlation between two measures that theoretically should be associated (e.g. the newly-constructed measures and the existing measures).
@@ -59,6 +59,8 @@ Below are some examples of how term frequency measures are constructed in the fi
 
 - [Li et al. (2020)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3508497): similar to Sautner et al. (2022), it measures the **climate risk** of a given firm-year as the share of their quarterly earnings conference calls related to climate risk. The main differences between the two papers are the training dictionary, and the sub-topics chosen under climate change. Li et al. (2020) manually constructs a hybrid dictionary consisting of both unigrams and bigrams related to climate, and separate them into three categories, acute physical climate risk, chronic physical climate risk, and transition risk. To compute the two measures of physical climate risk, they scale the frequency of related keywords (unigrams or bigrams) with at least one risk synonym in their vicinity (±1 sentence) by the length of the transcript. As for transition risk, it is measured based on the occurrences of the keywords in transition risk dictionary only, without requiring them to appear near a risk synonym.
 
+- [Li et al. (2021)](https://academic.oup.com/rfs/article/34/7/3265/5869446): it measures five **corporate cultural values** for 62,664 firm-year observations over the period 2001–2018. The authors train a word embedding (Word2Vec) model using earnings call transcripts, then construct a culture dictionary based on seed words related to five corporate cultural values: innovation, integrity, quality, respect, and teamwork. The culture scores are TF-IDF weighted.
+
 <br>
 
 That's all I have for this post. If you are also interested in applying NLP techniques to finance research, feel free to check out other pieces.
@@ -78,6 +80,7 @@ Stay tuned to this series, see you next time!
 - [Bae, Jihun, Chung Yu Hung, and Laurence van Lent](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4162594), 2022, Mobilizing Text as Data. Working paper. 
 - [Flynn, Joel P., and Karthik A. Sastry](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3592107), Attention Cycles. Working paper.
 - [Hassan, Tarek A, Laurence van Lent, Stephan Hollander, and Ahmed Tahoun](https://academic.oup.com/qje/article/134/4/2135/5531768), 2019, Firm-Level Political Risk: Measurement and Effects. The Quarterly Journal of Economics 134, 2135–2202.
-- [Li, Qing, Hongyu Shan, Yuehua Tang, and Vincent Yao](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3508497), 2020, Corporate Climate Risk: Measurements and Responses. Working paper.
+- [Li, Qing, Hongyu Shan, Yuehua Tang, and Vincent Yao](https://academic.oup.com/rfs/article/37/6/1778/7564223), 2020, Corporate Climate Risk: Measurements and Responses. Review of Financial Studies, forthcoming.
+- [Li, Kai, Feng Mai, Rui Shen, Xinyan Yan](https://academic.oup.com/rfs/article/34/7/3265/5869446), 2021, Measuring Corporate Culture Using Machine Learning. Review of Financial Studies 34, 3265–3315.
 - [Loughran, Tim, and Bill Mcdonald](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123), 2016, Textual Analysis in Accounting and Finance: A Survey. Journal of Accounting Research 54, 1187–1230.
-- [Sautner, Zacharias, Laurence van Lent, Grigory Vilkov, and Ruishen Zhang](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3642508), 2020, Firm-level Climate Change Exposure. Journal of Finance, forthcoming.
+- [Sautner, Zacharias, Laurence van Lent, Grigory Vilkov, and Ruishen Zhang](https://onlinelibrary.wiley.com/doi/full/10.1111/jofi.13219), 2020, Firm-level Climate Change Exposure. Journal of Finance, forthcoming.

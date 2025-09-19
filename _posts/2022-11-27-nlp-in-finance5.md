@@ -19,10 +19,10 @@ If you are also interested in applying NLP techniques to finance research, feel 
 - [Generative LLM](/posts/2024/04/nlp-in-finance6/)
 
 ## BERT Measure
-BERT (Bidirectional Encoder Representations from Transformers) is a transformer-based machine learning technique developed by researchers at Google. Compared to those count-based or dictionary-based measures we introduced previously, BERT model considers the context of each occurrence for a given word, and substantially outperforms those context-free models, like word2vec or GloVe, in language translation, named entity recognition, and sentiment classification of general text ([Devlin et al., 2018](https://arxiv.org/pdf/1810.04805v2.pdf)). However, it suffers from the criticism of costly training process and low interpretability due to its complex model structure and large amount of parameters.
+BERT (Bidirectional Encoder Representations from Transformers) is a transformer-based machine learning technique developed by researchers at Google. Compared to those count-based or dictionary-based measures we introduced previously, BERT model considers the context of each occurrence for a given word, and substantially outperforms those context-free models, like Word2Vec or GloVe, in language translation, named entity recognition, and sentiment classification of general text ([Devlin et al., 2018](https://arxiv.org/pdf/1810.04805v2.pdf)). However, it suffers from the criticism of costly training process and low interpretability due to its complex model structure and large amount of parameters.
 
 Training a BERT model usually includes two steps: pre-training and fine-tuning.
-- Pre-training: the model is trained on a large corpus of unlabelled text to learn the general semantic and syntactic information (unsupervised learning). In the original BERT model, they use the BooksCorpus (800M words) and English Wikipedia (2,500M words) as the pre-training corpus. Further studies have adapted it to different domains with domain-specific corpora, such as biomedical, computer science, finance, etc.
+- Pre-training: the model is trained on a large corpus of unlabeled text to learn the general semantic and syntactic information (unsupervised learning). In the original BERT model, they use the BooksCorpus (800M words) and English Wikipedia (2,500M words) as the pre-training corpus. Further studies have adapted it to different domains with domain-specific corpora, such as biomedical, computer science, finance, etc.
 - Fine-tuning: the model is trained for specific down-stream task with a much smaller training sample of task-specific inputs and outputs (supervised learning). Common down-stream tasks include sentence classification, name entity recognition (NER), question answering, etc.
 
 ![bert-2steps](/images/blog/2022-10-23-nlp-finance/bert-2steps.png)
@@ -37,15 +37,15 @@ Some recent papers using BERT model are listed below.
 
 ![finbert](/images/blog/2022-10-23-nlp-finance/finbert.png)
   
+- [Rajan et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4035849): they first pre-train BERT model on the corpus of all shareholder letters of the largest 120 non-financial companies by sales and the top 30 financial companies by assets between 1900 and 2020. Then they fine-tune BERT to identify whether the shareholder letters contain corporate goals (binary classifier) and to categorize the type of corporate goals (multi-label classifier), based on their labelled data. With these novel and detailed data, they find a variety of factors are associated with a corporation stating a specific goal, including advertising a firm’s strengths, promising improved performance, signalling a commitment to specific constituencies, building societal legitimacy, and conforming to the behavior of other corporations.
+
+![corporate-goals](/images/blog/2022-10-23-nlp-finance/corporate-goals.png)
+
 - [Kolbel et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3616324): they measure the **climate change risk** using BERT to classify sentences from the section Item 1.A of a firm’s 10-K. They fine-tune BERT on the sample reports provided in the TCFD (2019) guidelines, supplemented with non-climate-related random sentences, and confusing sentences reviewed and labelled by human annotators. Three classes are identified: sentences related to transition risk, physical risk, and neither of these risks. A sentence is assigned to a class if its probability of belonging to that class exceeds 0.8. Then the document-level climate risk score is computed as the average of these dummy variables over all sentences in Item 1.A. They find that disclosing transition and physical risks has differential effects, that the former increases CDS spreads after the Paris Climate Agreement of 2015, while the latter decreases the spreads. Their results do not replicate when using alternative measures, such as carbon emission, or climate risk from [Sautner et al. (2020)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3642508). They attribute this non-replication to their climate risk score being a more precise measure due to its reliance on standardized mandatory reporting and the BERT algorithm.
 
 ![bert-climate-risk1](/images/blog/2022-10-23-nlp-finance/bert-climate-risk1.png)
 
 ![bert-climate-risk2](/images/blog/2022-10-23-nlp-finance/bert-climate-risk2.png)
-
-- [Rajan et al. (2022)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4035849): they first pre-train BERT model on the corpus of all shareholder letters of the largest 120 non-financial companies by sales and the top 30 financial companies by assets between 1900 and 2020. Then they fine-tune BERT to identify whether the shareholder letters contain corporate goals (binary classifier) and to categorize the type of corporate goals (multi-label classifier), based on their labelled data. With these novel and detailed data, they find a variety of factors are associated with a corporation stating a specific goal, including advertising a firm’s strengths, promising improved performance, signalling a commitment to specific constituencies, building societal legitimacy, and conforming to the behavior of other corporations.
-
-![corporate-goals](/images/blog/2022-10-23-nlp-finance/corporate-goals.png)
 
 <br>
 

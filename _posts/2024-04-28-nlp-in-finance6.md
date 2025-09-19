@@ -16,7 +16,7 @@ This is the sixth post of the series on NLP in finance and accounting. In this p
 - [Practical Advise](#practical-advise)
 
 ## Rise of Generative LLM
-The launch of ChatGPT on November 30, 2022, brought significant attention towards generative LLMs, including OpenAI's GPT, Google Bard, and Meta's LLaMa.  These models are built on transformer architecture and excel in text generation. Compared to BERT, generative LLMs usually require more extensive training data and parameters, with less options for fine-tuning. In application, BERT is more capable of interpretive tasks, while generative LLM is adept at generative task, especially when creativity is needed.
+The launch of ChatGPT on November 30, 2022, brought significant attention towards generative LLMs, including OpenAI's GPT, Google Bard, and Meta's LLaMa. These models are built on transformer architecture and excel in text generation. Compared to BERT, generative LLMs usually require more extensive training data and parameters, with fewer options for fine-tuning. In application, BERT is more capable of interpretive tasks, while generative LLM is adept at generative task, especially when creativity is needed.
 
 ## Applications of Generative LLM
 Here is an overview of the applications of generative LLM in finance research, though not exhaustive. In other fields, for example economics, researchers have been exploring the feasibility of replacing human participants in experiment with models like ChatGPT.
@@ -45,7 +45,7 @@ The third application involves classification or scoring tasks, which are also p
 
 ![Eisfeldt et al](/images/blog/2022-10-23-nlp-finance/gpt-ai-exposure.png)
 
-- [Jha et al. (2023)](http://ssrn.com/abstract=4521096): they ask **GPT-3.5 to rate** "How does the firm plan to change its capital spending over the next year?" from decrease substantially (-1), decrease (-0.5), no change (0), increase (0.5), increase substantially (1), and provide a one-sentence explanation. Then a "Investment Score" is constructed based on GPT's response. They show that this "Investment Score" predicts higher future capital expenditure and R&D, and lower abnormal returns, suggesting it provides incremental information.
+- [Jha et al. (2023)](http://ssrn.com/abstract=4521096): they ask **GPT-3.5 to rate** "How does the firm plan to change its capital spending over the next year?" from decrease substantially (-1), decrease (-0.5), no change (0), increase (0.5), increase substantially (1), and provide a one-sentence explanation. Then an "Investment Score" is constructed based on GPT's response. They show that this "Investment Score" predicts higher future capital expenditure and R&D, and lower abnormal returns, suggesting it provides incremental information.
 
 ![Jha et al](/images/blog/2022-10-23-nlp-finance/gpt-investment-score.png)
 
@@ -99,10 +99,10 @@ Thanks for reading, and see you next time!
 <br>
 
 **Reference**
-- [Bai, John (Jianqiu), Nicole M. Boyson, Yi Cao, Miao Liu, and Chi Wan](https://ssrn.com/abstract_id=4480056), 2023, Executives vs. Chatbots: Unmasking Insights through Human-AI Differences in Earnings Conference Q&A, Working paper.
-- [Chen, Yifei, Bryan T. Kelly, and Dacheng Xiu](https://papers.ssrn.com/abstract=4416687), 2022, Expected Returns and Large Language Models, Working paper.
-- [Eisfeldt, Andrea L, Gregor Schubert, and Miao Ben Zhang](https://www.nber.org/papers/w31222), 2023, Generative AI and Firm Values, Working paper.
-- [Jha, Manish, Jialin Qian, Michael Weber, and Baozhong Yang](http://ssrn.com/abstract=4521096), 2023, ChatGPT and Corporate Policies, Working paper.
-- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://doi.org/10.2139/ssrn.4425527), 2023a, Bloated Disclosures: Can ChatGPT Help Investors Process Information?, Working paper.
-- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4593660), 2023b, From Transcripts to Insights: Uncovering Corporate Risks Using Generative AI, Working paper. 
+- [Bai, John (Jianqiu), Nicole M. Boyson, Yi Cao, Miao Liu, and Chi Wan](https://ssrn.com/abstract_id=4480056), 2023, Executives vs. Chatbots: Unmasking Insights through Human-AI Differences in Earnings Conference Q&A. Working paper.
+- [Chen, Yifei, Bryan T. Kelly, and Dacheng Xiu](https://papers.ssrn.com/abstract=4416687), 2022, Expected Returns and Large Language Models. Working paper.
+- [Eisfeldt, Andrea L, Gregor Schubert, and Miao Ben Zhang](https://www.nber.org/papers/w31222), 2023, Generative AI and Firm Values. Working paper.
+- [Jha, Manish, Jialin Qian, Michael Weber, and Baozhong Yang](http://ssrn.com/abstract=4521096), 2023, ChatGPT and Corporate Policies. Working paper.
+- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://doi.org/10.2139/ssrn.4425527), 2023a, Bloated Disclosures: Can ChatGPT Help Investors Process Information? Working paper.
+- [Kim, Alex G., Maximilian Muhn, and Valeri V. Nikolaev](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4593660), 2023b, From Transcripts to Insights: Uncovering Corporate Risks Using Generative AI. Working paper. 
 

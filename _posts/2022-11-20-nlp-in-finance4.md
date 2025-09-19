@@ -7,10 +7,10 @@ tags:
 ---
 
 This is the fourth post of the series on NLP in finance and accounting. In this post, we will talk about readability measures. 
-- [Readability Measures](#readability-measures)
+- [Readability Measure](#readability-measure)
 - [Related Literature](#related-literature)
 
-## Readability Measures
+## Readability Measure
 Readability measures aim to quantify the readers' ability to understand the (financial) documents, or more generally, the information complexity. In linguistics, Fog index was developed by Robert Gunning in 1952 to measure readability. The index estimates the years of formal education a person needs to understand the text on the first reading. For instance, a fog index of 16 indicates the reader need 16 years of education, namely a college degree (around 22 years old), to understand the content on its first reading.
 
 In finance and accounting literature, research on readability has a long history, as summarized by Jones & Shoemaker (1994). But the sample sizes of these early studies are very small. [Li (2008)](https://www.sciencedirect.com/science/article/abs/pii/S0165410108000141) is the first paper to examine the readability of financial documents (annual reports) with a meaningful sample size. Follow-up studies refine the measurement to suit financial document, and explore it in various contents. Common readability measures used in finance and accounting include Fog index, document length (total words), file size, Bog index, etc. [Loughran & Mcdonald (2016)](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12123) summarized research on readability in section 2.2.
@@ -26,7 +26,7 @@ Some studies using different measures for readability are listed below.
 ![readability-correlation](/images/blog/2022-10-23-nlp-finance/readability-correlation.png)
 
 - [Bonsall et al. (2017)](https://www.sciencedirect.com/science/article/abs/pii/S0165410117300162): they agree with [Loughran & Mcdonald (2014)](https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12162) that Fog index could be misleading in the context of financial reporting, but also argue that a vast amount of the variation in 10-K file size over time is driven by the inclusion of content unrelated to the underlying text (e.g., HTML, XML, PDFs). They propose a new measure, **Bog index**, computed as *Sentence Bog* plus *Word Bog* minus *Pep*. It summarizes the writing attributes provided by StyleWriter, a computational linguistics software program. A higher Bog Index equates to a less readable document.
-  - *Sentence Bog*: the squared average sentence length, scaled by a standard long sentence limit of 35 word per sentence. 
+  - *Sentence Bog*: the squared average sentence length, scaled by a standard long sentence limit of 35 words per sentence. 
   - *Word Bog*: the sum of plain English style problems and word difficulty multiplied by 250 and divided by the number of words.
     - Plain English style problems include passive verbs, hidden verbs, overwriting, legal terms, clichés, abstract words, and wordy phrases, as listed in SEC Plain English Handbook. Higher scores indicate more problems and lower readability.
     - Word difficulty measured by a proprietary list of over 200,000 words based on familiarity and assesses penalties between zero and four points based on a combination of the word's familiarity and precision. Higher scores indicate higher difficulty.
