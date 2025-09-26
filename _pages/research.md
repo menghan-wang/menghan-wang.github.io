@@ -10,8 +10,9 @@ author_profile: true
 
 [1] **Learning from Failure: The Role of Disclosure on Innovation**, Single-Authored (Job Market Paper)
 
-*Presented at*: FMA Annual Meeting (2025, scheduled), NFA Annual Meeting (2025, scheduled), EFM Doctoral Seminar (2025), Durham Finance Job Market Paper Conference (2025), Warwick Economics PhD Conference (2025), NBER Economic Analysis of Regulation (2025), CES North American Conference (2025), AFA PhD Student Poster Session (2025), HKU Summer Finance Conference PhD Consortium (2024)
+*Presented at*: FMA Annual Meeting (2025, scheduled), NFA Annual Meeting (2025), EFM Doctoral Seminar (2025), Durham Finance Job Market Paper Conference (2025), Warwick Economics PhD Conference (2025), NBER Economic Analysis of Regulation (2025), CES North American Conference (2025), AFA PhD Student Poster Session (2025), HKU Summer Finance Conference PhD Consortium (2024)
 
+*Awards*: 2025 FMA Annual Meeting Semi-finalist of the Best Paper Award in Corporate Finance, 2025 NFA Annual Meeting PhD Travel Grant, 2025 CES North American Conference Travel Support, 2025 AFA PhD Student Travel Grant
 
 [2] [Implicit versus Explicit Contracting in Executive Compensation for Environmental and Social Performance](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4980762), with Roni Michaely and Thomas Schmid  
 
