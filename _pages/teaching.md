@@ -32,7 +32,7 @@ TA for [Prof. Xuewen Liu](https://www.hkubs.hku.hk/people/xuewen-liu/)
 
 **MFIN7048: Advanced International Finance**
 
-TA for [Prof. Yan XU](https://www.hkubs.hku.hk/people/yan-xu/) 
+TA for [Prof. Yan Xu](https://www.hkubs.hku.hk/people/yan-xu/) 
 
 *Postgraduate course, 2022 Fall*
 <!--  Lectured on mid-term exams; Graded assignments, mid-term and final exams; Invigilation and other administrative support -->
