@@ -21,7 +21,7 @@ author_profile: true
 
 [3] **How Green is Green? Anatomy of ESG Funds’ Selection**, with Dunhong Jin and Roni Michaely
 
-*Presented at*: EFM Annual Conference (2025), AsianFA Annual Conference (2025)\*, Lapland Investment Fund Summit (2025)\*, SWUFE Internaltional Conference on Green Finance and ESG (2025)\*, 2nd HKU-TLV Summer Finance Conference (2024)\*, HKU Inaugural ESG Conference (2023), Korea University\*, Sungkyunkwan University\*, ESCP Business School\*, the Hong Kong University of Science and Technology (Guangzhou)\*
+*Presented at*: EFM Annual Conference (2025), AsianFA Annual Conference (2025)\*, Lapland Investment Fund Summit (2025)\*, SWUFE International Conference on Green Finance and ESG (2025)\*, 2nd HKU-TLV Summer Finance Conference (2024)\*, HKU Inaugural ESG Conference (2023), Korea University\*, Sungkyunkwan University\*, ESCP Business School\*, the Hong Kong University of Science and Technology (Guangzhou)\*
 
 
 [4] **ESG Incidents and Firms’ Response on Social Media**, with Chu (Ivy) Dang and Roni Michaely 
