@@ -8,7 +8,7 @@ author_profile: true
 <!-- move it to `_pages/` when ready, it will generate a new folder `research/` under `_site/` -->
 
 
-[1] **Learning from Failure: The Role of Disclosure on Innovation**, Single-Authored (Job Market Paper)
+[1] [Learning from Failure: The Role of Disclosure on Innovation](https://www.dropbox.com/scl/fi/jz5gm9sgzc11ls6jf4nx0/JMP_Menghan-Wang.pdf?rlkey=ylnvo9yeg0b4loeaz8avrn5ec&st=760t1xn6&dl=0), Single-Authored (Job Market Paper)
 
 *Presented at*: FMA Annual Meeting (2025, scheduled), NFA Annual Meeting (2025), EFM Doctoral Seminar (2025), Durham Finance Job Market Paper Conference (2025), Warwick Economics PhD Conference (2025), NBER Economic Analysis of Regulation (2025), CES North American Conference (2025), AFA PhD Student Poster Session (2025), HKU Summer Finance Conference PhD Consortium (2024)
 
@@ -19,7 +19,7 @@ author_profile: true
 *Presented at*: Annual Research Conference of the Alliance for Research on Corporate Sustainability (2025), Baruch/JFQA Conference Poster Session (2025), ESCP Business School\*, IESE Business School\*, Bocconi University\*, University of Cyprus\*, Copenhagen Business School\*, Hong Kong Polytechnic University\*, University of Hong Kong, Tel Aviv University\*, Geneva Finance Research Institute\*, University of Zurich\*, National Taiwan University\*, Fudan University\*, Korean University Business School\*, ESCP Business School\*, Georgetown University\*, Arizona State University\*, University of Toronto\*, University of Arizona\*, Rice University\*, and City University of Hong Kong\*
 
 
-[3] **How Green is Green? Anatomy of ESG Funds’ Selection**, with Dunhong Jin and Roni Michaely
+[3] [How Green is Green? Anatomy of ESG Funds’ Selection](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5832962), with Dunhong Jin and Roni Michaely
 
 *Presented at*: EFM Annual Conference (2025), AsianFA Annual Conference (2025)\*, Lapland Investment Fund Summit (2025)\*, SWUFE International Conference on Green Finance and ESG (2025)\*, 2nd HKU-TLV Summer Finance Conference (2024)\*, HKU Inaugural ESG Conference (2023), Korea University\*, Sungkyunkwan University\*, ESCP Business School\*, the Hong Kong University of Science and Technology (Guangzhou)\*
 
