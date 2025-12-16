@@ -8,7 +8,7 @@ author_profile: true
 <!-- move it to `_pages/` when ready, it will generate a new folder `research/` under `_site/` -->
 
 
-[1] [Learning from Failure: The Role of Disclosure on Innovation](https://www.dropbox.com/scl/fi/jz5gm9sgzc11ls6jf4nx0/JMP_Menghan-Wang.pdf?rlkey=ylnvo9yeg0b4loeaz8avrn5ec&st=760t1xn6&dl=0), Single-Authored (Job Market Paper)
+[1] [Learning from Failure: The Role of Disclosure on Innovation]({{ site.baseurl }}{% link /files/JMP_Menghan Wang.pdf %}), Single-Authored (Job Market Paper)
 
 *Presented at*: FMA Annual Meeting (2025, scheduled), NFA Annual Meeting (2025), EFM Doctoral Seminar (2025), Durham Finance Job Market Paper Conference (2025), Warwick Economics PhD Conference (2025), NBER Economic Analysis of Regulation (2025), CES North American Conference (2025), AFA PhD Student Poster Session (2025), HKU Summer Finance Conference PhD Consortium (2024)
 
